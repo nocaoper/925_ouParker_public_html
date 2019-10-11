@@ -1,0 +1,202 @@
+.marker-cluster-small {
+  background-color: rgba(181, 226, 140, 0.6);
+}
+.marker-cluster-small div {
+  background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(241, 211, 87, 0.6);
+}
+.marker-cluster-medium div {
+  background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+}
+.marker-cluster-large div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+  background-color: rgb(181, 226, 140);
+}
+.leaflet-oldie .marker-cluster-small div {
+  background-color: rgb(110, 204, 57);
+}
+
+.leaflet-oldie .marker-cluster-medium {
+  background-color: rgb(241, 211, 87);
+}
+.leaflet-oldie .marker-cluster-medium div {
+  background-color: rgb(240, 194, 12);
+}
+
+.leaflet-oldie .marker-cluster-large {
+  background-color: rgb(253, 156, 115);
+}
+.leaflet-oldie .marker-cluster-large div {
+  background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+
+  text-align: center;
+  border-radius: 15px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.marker-cluster span {
+  line-height: 30px;
+}
+.circleFavorisBixiSingle {
+    width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('Camions5.png');
+  text-align: center;
+}
+.circleFavorisBixi {
+    width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('Camions6_interiorNum.png');
+  text-align: center;
+}
+.circle {
+  width: 52px;
+  height: 86px;
+  line-height: 87px;
+  background-image: url('Camions6_interiorNum.png');
+  text-align: center;
+}
+
+.circleBixi {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('Bixi1_add.png');
+  text-align: center;
+}
+
+.circleBixiSingle {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('Bixi1.png');
+  text-align: center;
+}
+
+.circleStationnementNotAvailable {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('carPinProhibited.png');
+  background-size: 100%;
+  text-align: center;
+}
+
+.circleStationnementSingle {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('carPin.png');
+  background-size: 100%;
+  text-align: center;
+}
+
+.circleStationnement {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('carPinHole.png');
+  background-size: 100%;
+  text-align: center;
+}
+
+.circleArceauSingle {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('002_bikeRack.png');
+  text-align: center;
+}
+
+.circleArceau {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('001_bikeRack_hole.png');
+  text-align: center;
+}
+
+.circleBixiSingle progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 6px;
+}
+
+.circleFavorisBixiSingle progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 6px;
+}
+
+.markerRech {
+  width: 53px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('destinationPin.png');
+  text-align: center;
+}
+
+.markerRechHole {
+  width: 53px;
+  height: 86px;
+  line-height: 87px;
+  background-image: url('destinationPin_ClusterGroup.png');
+  text-align: center;
+}
+
+.circleFavoriSingle {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('starPin.png');
+  background-size: 100%;
+  text-align: center;
+}
+
+.circleFavoriHole {
+  width: 45px;
+  height: 79px;
+  line-height: 75px;
+  background-image: url('starPin_hole.png');
+  background-size: 100%;
+  text-align: center;
+}
+
+
+.circleFavoriSingle progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 6px;
+  vertical-align: bottom;
+  margin-bottom: 9px;
+}
+

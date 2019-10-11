@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: 
+  url("https://s3.amazonaws.com/bixitrucks2/y_images/general/star_sky_pattern.gif");
+  background-color: #73B6E6;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+
+output { 
+  position: absolute;
+  background-image: linear-gradient(#444444, #999999);
+  width: 40px; 
+  height: 30px; 
+  text-align: center; 
+  color: white; 
+  border-radius: 10px; 
+  display: inline-block; 
+  font: bold 15px/30px Georgia;
+  bottom: 175%;
+  left: 0;
+}
+
+output:after { 
+  content: "";
+  position: absolute; 
+  width: 0;
+  height: 0;
+  border-top: 10px solid #999999;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+
+.myslider { 
+    -webkit-appearance: none; 
+    background: #FCF3CF  ; 
+    width: 50%; 
+    height: 20px; 
+    opacity: 2;
+    align-content: center;
+   } 
+  
+  
+.myslider::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    cursor: pointer; 
+    background: #34495E  ; 
+    width: 5%; 
+    height: 20px; 
+} 
+  
+  
+.myslider:hover { 
+    opacity: 1; 
+} 
+
+.sliderRayon { 
+  position: relative; 
+  margin: 50px;
+  width: 50%;
+}
+
+#map {
+  width: 100%;
+  height: 326px;
+  position: relative;
+	/* display: none; */
+}
+
+#container-flex {
+  width: auto;
+  margin: auto;
+  height: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3dc3f4+0,7dd3f2+21,ffffff+82,ffffff+100&1+62,0+100 */
+  background: -moz-linear-gradient(top, rgba(61, 195, 244, 1) 0%, rgba(125, 211, 242, 1) 21%, rgba(212, 241, 251, 1) 62%, rgba(255, 255, 255, 0.47) 82%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(61, 195, 244, 1) 0%, rgba(125, 211, 242, 1) 21%, rgba(212, 241, 251, 1) 62%, rgba(255, 255, 255, 0.47) 82%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(61, 195, 244, 1) 0%, rgba(125, 211, 242, 1) 21%, rgba(212, 241, 251, 1) 62%, rgba(255, 255, 255, 0.47) 82%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3dc3f4', endColorstr='#00ffffff', GradientType=0); /* IE6-9 */
+}
+
+.centeredDiv {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.leaflet-popup-content p {
+  margin: 0 2px !important;
+}
+
+#chargement {
+	/* position: relative; */
+	/* position: absolute; */
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: black;
+	overflow-y: scroll;
+	/* display: none; */
+	text-align: center;
+	background-image: url('loading/ouLoad.p1.jpg');
+  background-size: auto 100%;
+	/* background-position: center top; */
+}
+
+.status {
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* top: 150px; */
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.navBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.logoBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  font-family: 'Spicy Rice', cursive;
+  font-size: 35px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.loginButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.loginButton:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+#myCartNow2 {
+  position: absolute;
+  bottom: 90px;
+  right: 65px;
+}
+
+#myCartNow33 {
+  float: left;
+  display: block;
+  position: fixed;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(201, 76, 76, 0.5);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+

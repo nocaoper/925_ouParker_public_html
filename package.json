@@ -1,0 +1,14 @@
+{
+  "name": "ouParker.com",
+  "version": "1.0.0",
+  "description": "Aider les gens a stationner",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}

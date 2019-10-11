@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>O&ugrave;-parker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"/>
+    <!-- generated with https://gauger.io/fonticon/ -->
+    <link rel="icon" type="image/x-icon" href="assets/blackcar.favicon.ico" />
+    <link rel="stylesheet" href="assets/fontAwe/css/all.min.css" />
+    <link rel="stylesheet" href="assets/maps/leaflet-gesture-handling.css" />
+
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="assets/maps/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/maps/leaflet-ruler/leaflet-ruler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.65.1/dist/L.Control.Locate.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+    <link rel="stylesheet" href="assets/main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+#panelButton, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+  #panelButton {
+    padding: 50px;
+    display: none;
+  }
+  .btn-group {
+    width: 100%;
+  }
+
+  .btn-group .btn {
+    width: 50%;
+  }
+    </style>
+  </head>
+
+  <body>
+    <div id="chargement"> 
+      <div class='status'>
+        <br/> <br/> <br/>
+      </div>
+
+      <div class='logoBar'>
+        O&ugrave; Parker ???
+      </div>
+
+      <div class='navBar'>
+        <i class="fa fa-cog fa-pulse" style='color:red;font-size:24px;vertical-align:middle;'></i>
+        <progress id='vie' value='0' max='100' style='vertical-align: middle;'></progress>
+
+      </div>
+    </div>
+
+    <div id="container-flex">
+
+      <div class='ui-widget-content' id='myCartNow2'>
+        <a id='myCartNow33' data-fancybox data-src="#hello" href="javascript:;">
+          <i class="far fa-search-location fa-2x"></i>
+        </a>
+      </div>
+      <div id="hello" style="display:none;min-width:50%;">
+        <h2 class="mb-3">
+          Recherche Avanc&eacute;e
+        </h2>
+        <p>
+        <input type="text" id="search" placeholder="Recherche" name="hi1"/>
+        </p>
+        <p>
+        <select id="filter" name="filter">
+          <option value="nom" selected>Nom de la rue</option>
+          <option value="id">ID de l'emplacement</option>
+          <option value="sGenre">Genre(NORMAL, HANDICAPE, AUTRE)</option>
+          <option value="sType">Type (SIMPLE, DOUBLE)</option>
+          <option value="nSupVelo">Support &agrave; v&eacute;lo (SIMPLE, DOUBLE)</option>
+        </select>
+        </p>
+        <p class="mb-0 text-right">
+        <button class="send btn btn-primary" id="myBtn">Envoyer</button>
+        </p>
+      </div>
+
+      <div id='map'></div>
+
+      <p>
+      <button id="loadBixis" style="padding: 3px 5px;"><i class="fal fa-bicycle"></i>Afficher Bixis</button>
+      <button id="loadArceau" style="padding: 3px 5px;"><i class="far fa-tally"></i>Afficher Arceaux</button>
+      <button id="loadStationnement" style="padding: 3px 5px; display: none;"><i class="far fa-parking-circle"></i>Afficher Stationnements</button>
+	  <button id="loadFavoris" style="padding: 3px 5px;">Rafraichir Favoris</button>
+      </p>
+
+      <form class="sliderRayon">
+        <input type="range" name="foo" id="slider" class="myslider" min="50" max="500" value="50">
+        <output for="foo" class="output" onforminput="value = foo.valueAsNumber;"></output>
+      </form>
+      </p>
+    </div>
+
+    <div class="btn-group btn-toolbar">
+      <button type="button" onclick="signOut()" class="btn btn-danger btn-space favoris" style="width:100%">Se déconnecter</button>
+    </div>
+        </br>
+        </br>
+        </div class="col-md-4 center-block">
+        <button type="button" class="btn btn-warning col-md-6 offset-md-3 favoris" disabled>Favoris</button>
+		<p style="color:red; text-align: center;" class="FavListBIXI"><p>
+		<p style="color:red; text-align: center;" class="FavListParking"><p>
+		<p style="color:red; text-align: center;" class="FavListArceau"><p>
+        </div>
+        <div class="btn-group btn-toolbar slider">
+          <button type="button" class="btn btn-secondary btn-space" id="connect">Se connecter</button>
+          <button type="button" class="btn btn-success btn-space" id="subscribe">S'inscrire</button>
+        </div>
+
+        <div id="panelButton" class="1">
+          <div class="container">
+            <div class="panel panel-default auth-forms">
+              <div class="panel-body login">
+                <p>Connexion</p>
+                <form class="logInNew">
+                  <input class="login-email" type="text" placeholder="Entrez votre courriel" required>
+                  <input class="login-password" type="password" placeholder="Entrez votre mot de passe" required>
+                  <input type="submit" class="btn btn-secondary" value="Se connecter">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="panelButton" class="2" >
+          <div class="container">
+            <div class="panel panel-default auth-forms">
+              <div class="panel-body signUp">
+                <p>Inscription</p>
+                <form class="logInNew">
+                  <input class="signUp-email" type="text" placeholder="Entrez votre courriel" required>
+                  <input class="signUp-password" type="password" placeholder="Entrez un mot de passe" required>
+                  <input type="submit" class="btn btn-secondary" value="S'inscrire">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>
+
+<script crossorigin='anonymous' src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/jquery.ui.touch-punch.min.js"></script>
+<script src="assets/errorReporting/fancytrack.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/5.5.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/5.5.1/firebase-firestore.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/5.5.1/firebase-messaging.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/5.5.1/firebase-functions.js"></script>
+<script src="assets/fbase/init.js"></script>
+<script crossorigin='anonymous' src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<script crossorigin='anonymous' src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="assets/maps/leaflet.markercluster.js"></script>
+<script src="assets/maps/leaflet-gesture-handling.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+<script src="assets/timeStringFormat.js"></script>
+<script src="assets/maps/leaflet-ruler/leaflet-ruler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.65.1/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<script src="assets/maps/mesureDist/dms.js"></script>
+<script src="assets/maps/mesureDist/latlon-spherical.js"></script>
+<script src="assets/maps/initMap.js"></script>
+<script src="assets/maps/mapFunctions.js"></script>
+
+<script src="assets/cache/lovefield.min.js"></script>
+<script src="assets/cache/schema.js"></script>
+<script src="assets/cache/cache.js"></script>
+
+<script src="assets/date.js"></script>
+<script src="assets/rechAvancee.js"></script>
+<script src="assets/main.js"></script>
